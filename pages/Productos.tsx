@@ -11,9 +11,9 @@ export default function Productos() {
   const [categoria, setCategoria] = useState("");
   const [url_fotografia, setUrlFotografia] = useState("");
   const [cargando, setCargando] = useState(false);
-  const [fotoUri, setFotoUri] = useState(null);
+  const [fotoUri, setFotoUri] = useState<string | null>(null);
 
-  function normalizarEstado(valor) {
+  function normalizarEstado(valor: string): string {
     const v = (valor || "").trim().toLowerCase();
 
     if (v === "disponible") return "Disponible";
@@ -66,7 +66,7 @@ export default function Productos() {
         return;
       }
 
-      Alert.alert("Éxito", "Producto agregado ✅");
+      Alert.alert("Éxito", "Producto agregado");
 
       setNombre("");
       setDescripcion("");
